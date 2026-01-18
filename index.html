@@ -384,20 +384,25 @@
 </section>
 
 <div id="projectModal" class="project-modal">
+    <div class="md:hidden fixed top-0 left-0 w-full bg-black/80 text-white p-4 z-[10001] flex justify-between items-center backdrop-blur-md">
+        <button onclick="closeProjectPreview()" class="flex items-center gap-2 text-sm font-bold">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </button>
+        <span class="text-[10px] uppercase tracking-widest opacity-60">Live Preview</span>
+    </div>
+
     <div class="project-modal-content">
-        <div class="project-modal-header">
-            <div class="flex items-center gap-2">
+        <div class="project-modal-header hidden md:flex"> <div class="flex items-center gap-2">
                 <span class="w-3 h-3 rounded-full bg-red-400"></span>
                 <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
                 <span class="w-3 h-3 rounded-full bg-green-400"></span>
-                <span id="modalProjectUrl" class="ml-4 text-[10px] font-mono text-gray-400 truncate max-w-[200px] md:max-w-none"></span>
+                <span id="modalProjectUrl" class="ml-4 text-[10px] font-mono text-gray-400"></span>
             </div>
             <button onclick="closeProjectPreview()" class="close-project">&times;</button>
         </div>
         <iframe id="projectFrame" src="" frameborder="0" class="w-full h-full bg-white"></iframe>
     </div>
 </div>
-    
     </section>
     <section id="achievements" class="py-24 bg-white dark:bg-gray-900">
     <div class="max-w-6xl mx-auto px-6">
@@ -506,8 +511,8 @@
                 <div class="space-y-6">
                     <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500">Contact</h4>
                     <ul class="space-y-4">
-                        <li><a href="https://wa.me/919065849388" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500 transition font-medium">WhatsApp</a></li>
-                        <li><a href="tel:+919065849388" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500 transition font-medium">Direct Call</a></li>
+                        <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500 transition font-medium">WhatsApp</a></li>
+                        <li><a href="tel:+91" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500 transition font-medium">Direct Call</a></li>
                     </ul>
                 </div>
             </div>
