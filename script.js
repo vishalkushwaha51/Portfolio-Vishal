@@ -1,618 +1,117 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-}
-
-/* Dark Mode Overrides */
-.dark-mode {
-    background-color: #111827;
-    color: #f3f4f6;
-}
-
-/* Navbar Glassmorphism */
-.nav-glass {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-.dark-mode .nav-glass {
-    background: rgba(17, 24, 39, 0.8);
-    border-color: #1f2937;
-}
-
-/* Blob Shape for Profile */
-.blob-shape {
-    border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%;
-}
-
-/* Skill Boxes */
-.skill-box {
-    padding: 2rem;
-    background: #f9fafb;
-    border-radius: 1rem;
-    border: 1px solid #f3f4f6;
-    transition: all 0.3s ease;
-}
-
-.dark-mode .skill-box {
-    background: #1f2937;
-    border-color: #374151;
-}
-
-.skill-box:hover {
-    transform: translateY(-5px);
-    border-color: #27ae60;
-}
-
-/* Project Cards */
-.project-card {
-    background: white;
-    border-radius: 1.5rem;
-    overflow: hidden;
-    border: 1px solid #f3f4f6;
-    transition: all 0.4s ease;
-}
-
-.dark-mode .project-card {
-    background: #111827;
-    border-color: #1f2937;
-}
-
-.project-card:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-/* Timeline Logic */
-.timeline-card {
-    position: relative;
-    width: 100%;
-    margin-bottom: 3rem;
-    padding-left: 2rem;
-}
-
-@media (min-width: 768px) {
-    .timeline-card {
-        width: 50%;
-        padding: 0 3rem;
-    }
-    .timeline-card.left { left: -50%; text-align: right; }
-    .timeline-card.right { left: 0; text-align: left; }
+// Wait for DOM to load
+document.addEventListener('DOMContentLoaded', () => {
     
-    .timeline-card::after {
-        content: '';
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        background: #27ae60;
-        border-radius: 50%;
-        top: 8px;
-    }
-    .timeline-card.left::after { right: -10px; }
-    .timeline-card.right::after { left: -10px; }
-}
-
-/* Animations */
-@keyframes blob {
-    0% { transform: translate(0px, 0px) scale(1); }
-    33% { transform: translate(30px, -50px) scale(1.1); }
-    66% { transform: translate(-20px, 20px) scale(0.9); }
-    100% { transform: translate(0px, 0px) scale(1); }
-}
-
-.animate-blob {
-    animation: blob 7s infinite;
-}
-
-/* Modal Styling */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal.active { display: flex; }
-.modal img { max-width: 90%; max-height: 80%; border-radius: 0.5rem; }
-/* Certificate Image Hover in Modal */
-.modal img {
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-}
-.modal.active img {
-    transform: scale(1);
-}
-
-/* Footer Social Icons Glow */
-footer a i {
-    transition: all 0.3s ease;
-}
-/* Floating CV Button */
-.floating-cv {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #27ae60;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 100;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.floating-cv i {
-    font-size: 1.2rem;
-}
-
-.cv-text {
-    max-width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: max-width 0.4s ease;
-}
-
-/* Hover Effect: Expands the text when you mouse over it */
-.floating-cv:hover {
-    background: #219150;
-    transform: scale(1.05) translateY(-5px);
-    padding-right: 25px;
-}
-
-.floating-cv:hover .cv-text {
-    max-width: 120px;
-}
-
-/* Mobile responsive: Show only the icon if screen is very small */
-@media (max-width: 640px) {
-    .floating-cv {
-        bottom: 20px;
-        right: 20px;
-        padding: 15px;
-    }
-    .cv-text {
-        display: none;
-    }
-}
-<ul class="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-300">
-    <li><a href="#about" class="hover:text-green-600 transition">About</a></li> <li><a href="#journey" class="hover:text-green-600 transition">Journey</a></li>
-    <li><a href="#skills" class="hover:text-green-600 transition">Skills</a></li>
-    <li><a href="#projects" class="hover:text-green-600 transition">Projects</a></li>
-    <li><a href="#contact" class="hover:text-green-600 transition">Contact</a></li>
-</ul>
-/* Glassmorphism Effect */
-.nav-glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(15px) saturate(180%);
-    -webkit-backdrop-filter: blur(15px) saturate(180%);
-}
-
-.dark-mode .nav-glass {
-    background: rgba(17, 24, 39, 0.8);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Nav Links Styling */
-.nav-link {
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    tracking-widest: 0.1em;
-    color: #4b5563; /* gray-600 */
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.dark-mode .nav-link {
-    color: #d1d5db; /* gray-300 */
-}
-
-.nav-link:hover {
-    color: #047857; /* green-700 */
-}
-
-/* Hover underline effect */
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: #047857;
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* Contact Button in Nav */
-.nav-link-btn {
-    background: #065f46; /* green-800 */
-    color: white;
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.nav-link-btn:hover {
-    background: #047857;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.3);
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f3f4f6;
-    color: #1f2937;
-    transition: all 0.3s ease;
-}
-
-.dark-mode .theme-toggle {
-    background: #374151;
-    color: #fbbf24; /* yellow-400 */
-}
-
-.theme-toggle:hover {
-    transform: rotate(15deg);
-}
-/* Live Preview Modal Styling */
-.project-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    z-index: 10000; /* Sabse upar */
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-.project-modal.active {
-    display: flex;
-}
-
-.project-modal-content {
-    width: 100%;
-    max-width: 1200px;
-    height: 90vh;
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
-}
-
-.dark-mode .project-modal-content {
-    background: #111827;
-}
-
-.project-modal-header {
-    padding: 12px 24px;
-    background: #f9fafb;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.dark-mode .project-modal-header {
-    background: #1f2937;
-    border-color: #374151;
-}
-
-.close-project {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: #9ca3af;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.close-project:hover {
-    color: #ef4444;
-    transform: rotate(90deg);
-}
-
-#projectFrame {
-    flex-grow: 1;
-}
-/* ROADMAP DOTS (The vehicles/markers on the road) */
-.road-dot {
-    position: absolute;
-    left: 4px;
-    width: 40px;
-    height: 40px;
-    background: white;
-    border: 4px solid #22c55e;
-    color: #15803d;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
-}
-
-@media (min-width: 768px) {
-    .road-dot {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 60px;
-        font-size: 1.2rem;
-        border-width: 6px;
-    }
-}
-
-/* ROAD CARDS */
-.road-card {
-    width: 100%;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.road-card:hover {
-    transform: scale(1.02) translateY(-10px);
-}
-
-.road-year {
-    font-size: 0.75rem;
-    font-weight: 900;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-/* THE ROAD FLOW ANIMATION */
-@keyframes road-flow {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
-}
-
-.animate-road-flow {
-    height: 300px; /* Length of the moving light */
-    animation: road-flow 4s linear infinite;
-}
-.font-mono {
-    font-family: 'Fira Code', 'Courier New', monospace;
-}
-
-.text-blue-400 { color: #60a5fa; }
-.text-pink-500 { color: #ec4899; }
-.text-green-400 { color: #4ade80; }
-.text-yellow-200 { color: #fef08a; }
-/* Professional Skill Chips */
-.skill-tag {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 8px 16px;
-    background: #f9fafb;
-    color: #4b5563;
-    border-radius: 12px;
-    border: 1px solid #f3f4f6;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.dark-mode .skill-tag {
-    background: #1f2937;
-    color: #9ca3af;
-    border-color: #374151;
-}
-
-.skill-tag:hover {
-    background: #059669; /* green-600 */
-    color: white;
-    border-color: #059669;
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.3);
-}
-/* Special Highlighting for Lead Roles */
-.bg-green-700 {
-    background-color: #065f46;
-    transition: all 0.4s ease;
-}
-
-.bg-green-700:hover {
-    background-color: #047857;
-    transform: translateY(-5px);
-}
-.rotate-2 {
-    transform: rotate(2deg);
-}
-
-.hover\:rotate-0:hover {
-    transform: rotate(0deg);
-}
-/* ROAD CARDS */
-.road-card {
-    width: 100%;
-    padding: 2rem;
-    border-radius: 2rem;
-    border-width: 2px;
-    background: white;
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.dark-mode .road-card { background: #1f2937; shadow: none; }
-
-.road-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: #059669; /* green-600 */
-}
-
-/* THE TAGS INSIDE CARDS */
-.road-tag {
-    font-size: 10px;
-    font-weight: 900;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 50px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-/* THE NODES (Circles on the line) */
-.road-node {
-    position: absolute;
-    left: 4px;
-    width: 40px;
-    height: 40px;
-    background: white;
-    border: 4px solid #059669;
-    color: #059669;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-}
-
-@media (min-width: 768px) {
-    .road-node {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 54px;
-        height: 54px;
-        font-size: 1.1rem;
-        border-width: 6px;
-    }
-}
-
-/* ANIMATED FLOWING LIGHT */
-@keyframes road-flow {
-    0% { transform: translateY(-200%); }
-    100% { transform: translateY(500%); }
-}
-
-.animate-road-flow {
-    animation: road-flow 6s linear infinite;
-}
-body {
-    background-color: #ffffff;
-    color: #1f2937; /* gray-800 */
-}
-
-.nav-glass {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    border-color: #f3f4f6;
-}
-
-/* Ensure Journey cards stay clean in light mode */
-.road-card {
-    background: #ffffff;
-    border: 1px solid #f3f4f6;
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
-}
-/* --- MOBILE & TABLET OPTIMIZATIONS --- */
-
-/* Small Devices (Tablets/Phones) */
-@media (max-width: 1024px) {
-    .road-card {
-        padding: 1.5rem;
-        border-radius: 1.5rem;
-    }
-    header h2 {
-        font-size: 3.5rem !important; /* Title thoda chota mobile ke liye */
-    }
-}
-
-@media (max-width: 768px) {
-    /* Navbar fix for mobile */
-    .nav-glass ul {
-        display: none; /* Desktop menu hide */
-    }
     
-    /* Road Path adjustments for mobile */
-    .road-dot {
-        left: 20px !important;
-        transform: none !important;
-        width: 35px;
-        height: 35px;
-    }
+
+    // Check local storage for theme preference
+    if (localStorage.getItem('theme') === 'dark') enableDarkMode();
+
+
+    // --- EMAILJS CONTACT FORM ---
+    emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your real Public Key
+
+    const contactForm = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const btn = document.getElementById('submitBtn');
+        btn.innerText = 'Sending...';
+        btn.disabled = true;
+
+        const params = {
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', params)
+            .then(() => {
+                statusDiv.innerText = 'Message sent successfully! ✅';
+                statusDiv.className = 'mt-4 text-green-600 font-bold';
+                statusDiv.classList.remove('hidden');
+                contactForm.reset();
+            })
+            .catch((err) => {
+                statusDiv.innerText = 'Failed to send. Please try again. ❌';
+                statusDiv.className = 'mt-4 text-red-600 font-bold';
+                statusDiv.classList.remove('hidden');
+                console.error(err);
+            })
+            .finally(() => {
+                btn.innerText = 'Send Message';
+                btn.disabled = false;
+            });
+    });
+
+    // --- MODAL LOGIC ---
+    window.openModal = (src) => {
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modalImage');
+        modalImg.src = src;
+        modal.classList.add('active');
+    };
+
+    document.getElementById('modal').addEventListener('click', function() {
+        this.classList.remove('active');
+    });
+
+});
+function openProjectPreview(url) {
+    const modal = document.getElementById('projectModal');
+    const frame = document.getElementById('projectFrame');
+    const urlDisplay = document.getElementById('modalProjectUrl');
     
-    .absolute.left-4 {
-        left: 36px !important; /* Road line shift */
-    }
-
-    .road-card {
-        margin-left: 20px;
-        width: calc(100% - 30px);
-    }
-
-    /* Modal size for mobile */
-    .project-modal-content {
-        height: 80vh;
-        width: 95%;
-        border-radius: 15px;
-    }
-
-    /* Footer adjustments */
-    footer h2 {
-        font-size: 2.5rem !important;
-    }
+    urlDisplay.innerText = url;
+    frame.src = url;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Scroll disable
 }
 
-/* Very Small Devices (Mobile) */
-@media (max-width: 480px) {
-    header h2 {
-        font-size: 2.8rem !important;
-    }
+function closeProjectPreview() {
+    const modal = document.getElementById('projectModal');
+    const frame = document.getElementById('projectFrame');
     
-    .floating-cv {
-        bottom: 15px;
-        right: 15px;
-        padding: 12px;
-    }
-    
-    .cv-text {
-        display: none; /* Mobile par sirf icon dikhega */
-    }
-    
-    .project-card {
-        margin-bottom: 1rem;
-    }
-}
-.mobile-nav-link {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #4b5563;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 10px 0;
-    border-bottom: 1px solid #f3f4f6;
+    modal.classList.remove('active');
+    frame.src = ''; // Performance ke liye iframe clear karein
+    document.body.style.overflow = 'auto'; // Scroll enable
 }
 
-#mobile-menu.active {
-    display: flex;
-    animation: slideDown 0.3s ease-out;
-}
+// Esc key se modal band ho jaye
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeProjectPreview();
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+    // Toggle Menu
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('active');
+        // Icon change (Bars to X)
+        const icon = menuBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+
+    // Close menu when a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('active');
+            menuBtn.querySelector('i').classList.add('fa-bars');
+            menuBtn.querySelector('i').classList.remove('fa-times');
+        });
+    });
+});
+// Hardware Back Button handle karne ke liye (Android/Mobile browsers)
+window.onpopstate = function() {
+    const modal = document.getElementById('projectModal');
+    if (modal.classList.contains('active')) {
+        closeProjectPreview();
+    }
+};
+
