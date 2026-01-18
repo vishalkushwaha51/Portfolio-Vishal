@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Vishal Kushwaha | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/email.min.js"></script>
+</head>
+<body class="bg-white text-gray-800 transition-colors duration-300">
+
+   <nav class="nav-glass fixed top-0 w-full z-50 border-b border-gray-100 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex flex-col">
+            <a href="#" class="text-xl md:text-2xl font-extrabold tracking-tighter text-gray-900 group">
+                VISHAL <span class="text-green-700">KUSHWAHA</span>
+            </a>
+        </div>
+
+        <ul class="hidden md:flex items-center gap-10">
+            <li><a href="#about" class="nav-link text-xs font-bold uppercase tracking-widest text-gray-600">About</a></li>
+            <li><a href="#projects" class="nav-link text-xs font-bold uppercase tracking-widest text-gray-600">Projects</a></li>
+            <li><a href="#journey" class="nav-link text-xs font-bold uppercase tracking-widest text-gray-600">Career</a></li>
+            <li><a href="#footer" class="nav-link-btn">Let's Talk</a></li>
+        </ul>
+
+        <button id="menu-btn" class="md:hidden text-gray-900 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 flex-col p-6 space-y-4 shadow-xl md:hidden">
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#journey" class="mobile-nav-link">Career Path</a>
+        <a href="#achievements" class="mobile-nav-link">Certifications</a>
+        <a href="#footer" class="bg-green-700 text-white text-center py-3 rounded-xl font-bold">Let's Talk</a>
+    </div>
+</nav>
+
+
+    <header class="relative min-h-screen flex flex-col justify-center bg-white dark:bg-gray-900 overflow-hidden">
+  <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none">
+    <svg class="h-full w-full" fill="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" stroke="#27ae60" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center pt-24 pb-12">
+    
+    <div class="space-y-8 text-center md:text-left">
+      <div class="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/30 border border-green-100 dark:border-green-800">
+        <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+        </span>
+        <span class="text-[10px] font-black uppercase tracking-[0.2em] text-green-700 dark:text-green-400">Available for 2026 Roles</span>
+      </div>
+
+      <div class="space-y-4">
+        <h3 class="text-gray-500 dark:text-gray-400 font-bold uppercase tracking-[0.3em] text-xs">Vishal Kushwaha</h3>
+        <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-none">
+          Engineering <span class="text-green-700">Digital</span> Excellence.
+        </h2>
+      </div>
+      
+      <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg mx-auto md:mx-0">
+        BCA Student @ University of Lucknow. Specializing in high-performance frontend architectures and user-centric digital products.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+        <a href="#projects" class="bg-green-700 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-800 transition shadow-xl shadow-green-100 dark:shadow-none flex items-center justify-center gap-2">
+          Explore Projects <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+        <a href="#footer" class="bg-transparent border-2 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white px-8 py-4 rounded-xl font-bold hover:border-green-700 transition flex items-center justify-center">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+
+    <div class="hidden md:flex justify-center relative">
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-green-100 dark:bg-green-900/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-100 dark:bg-blue-900/20 rounded-full blur-3xl animate-pulse"></div>
+
+        <div class="relative bg-gray-900 rounded-[2.5rem] p-8 border border-gray-800 shadow-2xl w-full max-w-md transform rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div class="flex gap-2 mb-8">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <div class="space-y-4 font-mono text-sm leading-relaxed">
+                <p class="text-blue-400">&lt;div <span class="text-green-400">class</span>=<span class="text-yellow-200">"expertise"</span>&gt;</p>
+                <p class="pl-4 text-gray-400">Build high-performance UIs</p>
+                <p class="pl-4 text-gray-400">Optimizing user journeys</p>
+                <p class="pl-4 text-gray-400">Scaling digital impact</p>
+                <p class="text-blue-400">&lt;/div&gt;</p>
+                
+                <div class="pt-8 border-t border-gray-800 mt-4">
+                    <p class="text-pink-500">export default <span class="text-yellow-200">VishalKushwaha</span>;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</header>
+
+    <section id="about" class="py-24 bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative bg-gray-900 rounded-3xl p-8 border border-gray-800 shadow-2xl overflow-hidden">
+                    <div class="flex gap-2 mb-6">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <code class="text-sm md:text-base font-mono space-y-2 block">
+                        <p class="text-gray-500">// Professional Identity</p>
+                        <p><span class="text-pink-500">const</span> <span class="text-blue-400">developer</span> = {</p>
+                        <p class="ml-4"><span class="text-green-400">name</span>: <span class="text-yellow-200">"Vishal Kushwaha"</span>,</p>
+                        <p class="ml-4"><span class="text-green-400">role</span>: <span class="text-yellow-200">"Frontend Developer"</span>,</p>
+                        <p class="ml-4"><span class="text-green-400">education</span>: <span class="text-yellow-200">"BCA (2023-2026)"</span>,</p>
+                        <p class="ml-4"><span class="text-green-400">expertise</span>: [<span class="text-yellow-200">"UI"</span>, <span class="text-yellow-200">"Logic"</span>, <span class="text-yellow-200">"Performance"</span>]</p>
+                        <p>};</p>
+                    </code>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <div class="inline-block px-4 py-1.5 bg-green-50 dark:bg-green-900/20 text-green-700 rounded-full text-[10px] font-black uppercase tracking-widest border border-green-100 dark:border-green-800">
+                    My Professional Narrative
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                    Dedicated to <span class="text-green-700">Clean Code</span> & Scalable Interfaces.
+                </h2>
+
+                <div class="space-y-6 text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                    <p>
+                        I am a Final Year BCA student at <span class="text-gray-900 dark:text-white font-semibold">Techno Institute Of Higher Studies, Lucknow</span> (University of Lucknow). My mission is to build software that is both technically robust and user-centric.
+                    </p>
+                    <p>
+                        With a deep specialization in modern web technologies, I bridge the gap between design concepts and production-ready code. 
+
+                <div class="grid grid-cols-2 gap-6 pt-4">
+                    <div class="border-l-2 border-green-600 pl-4">
+                        <h4 class="font-bold text-gray-900 dark:text-white">Strategy</h4>
+                        <p class="text-sm text-gray-500">Planning & Architecture</p>
+                    </div>
+                    <div class="border-l-2 border-green-600 pl-4">
+                        <h4 class="font-bold text-gray-900 dark:text-white">Execution</h4>
+                        <p class="text-sm text-gray-500">Clean & Valid Code</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="journey" class="py-24 bg-white dark:bg-gray-900 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 text-center mb-20">
+        <h3 class="text-green-600 font-bold uppercase tracking-[0.2em] text-xs mb-2">My Progress</h3>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">
+            The <span class="text-green-700">Career</span> Roadmap.
+        </h2>
+        <div class="w-20 h-1.5 bg-green-600 mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 relative">
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 md:w-2 bg-gray-100 dark:bg-gray-800 md:-translate-x-1/2 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 w-full bg-gradient-to-b from-transparent via-green-500 to-transparent h-64 animate-road-flow"></div>
+        </div>
+
+        <div class="space-y-20 relative">
+            
+            <div class="relative flex flex-col md:flex-row items-center group">
+                <div class="flex flex-1 md:justify-end md:pr-16 w-full pl-12 md:pl-0">
+                    <div class="road-card border-green-500 bg-green-50/30 dark:bg-green-900/10">
+                        <span class="road-tag bg-green-600">Current Goal</span>
+                        <h3 class="text-2xl font-bold dark:text-white">BCA Graduation</h3>
+                        <p class="text-sm font-semibold text-gray-600 dark:text-gray-300 mt-1">Techno Institute of Higher Studies</p>
+                        <p class="text-xs text-gray-500 mt-1 italic">Affiliated with University of Lucknow (2023 - 2026)</p>
+                    </div>
+                </div>
+                <div class="road-node"><i class="fas fa-graduation-cap"></i></div>
+                <div class="flex-1 hidden md:block"></div>
+            </div>
+
+            <div class="relative flex flex-col md:flex-row-reverse items-center group">
+                <div class="flex flex-1 md:justify-end md:pl-16 w-full pl-12 md:pl-0">
+                    <div class="road-card border-gray-200 dark:border-gray-800">
+                        <span class="road-tag bg-blue-600">3rd & 5th SEM</span>
+                        <h3 class="text-2xl font-bold dark:text-white">Summer Training</h3>
+                        <p class="text-sm font-semibold text-gray-600 dark:text-gray-300 mt-1">Barrownz Learning Academy</p>
+                        <p class="text-xs text-gray-400 mt-3">Advanced Web Dev training focusing on Java Enterprise and Python architectures.</p>
+                    </div>
+                </div>
+                <div class="road-node"><i class="fas fa-laptop-code"></i></div>
+                <div class="flex-1 hidden md:block"></div>
+            </div>
+
+            <div class="relative flex flex-col md:flex-row items-center group">
+                <div class="flex flex-1 md:justify-end md:pr-16 w-full pl-12 md:pl-0">
+                    <div class="road-card border-gray-200 dark:border-gray-800">
+                        <span class="road-tag bg-gray-500">Class XII</span>
+                        <h3 class="text-2xl font-bold dark:text-white">Intermediate Education</h3>
+                        <p class="text-sm font-semibold text-gray-600 dark:text-gray-300 mt-1">Jharkhand Academic Council (JAC)</p>
+                        <p class="text-green-700 font-black text-sm mt-3 underline decoration-2 underline-offset-4">Result: 68% Marks (2022)</p>
+                    </div>
+                </div>
+                <div class="road-node"><i class="fas fa-school"></i></div>
+                <div class="flex-1 hidden md:block"></div>
+            </div>
+
+            <div class="relative flex flex-col md:flex-row-reverse items-center group">
+                <div class="flex flex-1 md:justify-end md:pl-16 w-full pl-12 md:pl-0">
+                    <div class="road-card border-gray-200 dark:border-gray-800">
+                        <span class="road-tag bg-purple-600">Diploma</span>
+                        <h3 class="text-2xl font-bold dark:text-white">ADCA Diploma</h3>
+                        <p class="text-sm text-gray-500 mt-1">Foundation of Advanced Computing Applications.</p>
+                    </div>
+                </div>
+                <div class="road-node"><i class="fas fa-certificate"></i></div>
+                <div class="flex-1 hidden md:block"></div>
+            </div>
+
+            <div class="relative flex flex-col md:flex-row items-center group">
+                <div class="flex flex-1 md:justify-end md:pr-16 w-full pl-12 md:pl-0">
+                    <div class="road-card border-gray-200 dark:border-gray-800">
+                        <span class="road-tag bg-gray-500">Class X</span>
+                        <h3 class="text-2xl font-bold dark:text-white">High School Education</h3>
+                        <p class="text-sm font-semibold text-gray-600 dark:text-gray-300 mt-1">DAV Cent. Public School, Garhwa (CBSE)</p>
+                        <p class="text-green-700 font-black text-sm mt-3 underline decoration-2 underline-offset-4">Result: 78% Marks (2020)</p>
+                    </div>
+                </div>
+                <div class="road-node"><i class="fas fa-flag-checkered"></i></div>
+                <div class="flex-1 hidden md:block"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <section id="skills" class="py-24 bg-gray-50 dark:bg-gray-800/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h3 class="text-green-600 font-bold uppercase tracking-[0.2em] text-xs mb-2">Technical Proficiency</h3>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Professional Toolkit</h2>
+            <div class="w-16 h-1 bg-green-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="p-8 bg-white dark:bg-gray-900 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-xl flex items-center justify-center text-green-700 mb-6">
+                    <i class="fas fa-code text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold dark:text-white mb-4">Frontend Engineering</h4>
+                <p class="text-xs text-gray-400 mb-6 uppercase tracking-widest font-bold">Expertise Level: High</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">Bootstrap 5</span>
+                    <span class="skill-tag">Responsive Design</span>
+                </div>
+            </div>
+
+            <div class="p-8 bg-white dark:bg-gray-900 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center text-blue-700 mb-6">
+                    <i class="fas fa-terminal text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold dark:text-white mb-4">Data & Programming</h4>
+                <p class="text-xs text-gray-400 mb-6 uppercase tracking-widest font-bold">Expertise Level: Core</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-tag">SQL (MySQL)</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Data Structures</span>
+                </div>
+            </div>
+
+            <div class="p-8 bg-white dark:bg-gray-900 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="w-12 h-12 bg-purple-50 dark:bg-purple-900/20 rounded-xl flex items-center justify-center text-purple-700 mb-6">
+                    <i class="fas fa-briefcase text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold dark:text-white mb-4">Workflow & Productivity</h4>
+                <p class="text-xs text-gray-400 mb-6 uppercase tracking-widest font-bold">Expertise Level: Professional</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">MS Excel</span>
+                    <span class="skill-tag">Canva</span>
+                    <span class="skill-tag">Git Flow</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="projects" class="py-24 bg-gray-50 dark:bg-gray-800/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+            <div>
+                <h3 class="text-green-600 font-bold uppercase tracking-[0.2em] text-xs mb-2">Portfolio</h3>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Selected Projects</h2>
+            </div>
+            <a href="https://github.com/vishal-kushwaha51" target="_blank" rel="noopener noreferrer" class="text-green-700 font-bold hover:underline flex items-center gap-2">
+                Github Repositories <i class="fas fa-external-link-alt text-sm"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="project-card bg-white dark:bg-gray-900 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-500">
+                <div class="h-48 bg-green-100 dark:bg-green-900/20 flex items-center justify-center relative group">
+                    <i class="fas fa-cricket-bat-ball text-6xl text-green-600 opacity-20 group-hover:scale-110 transition duration-500"></i>
+                </div>
+                <div class="p-6">
+                    <span class="text-[10px] bg-green-100 text-green-700 px-2 py-1 rounded font-bold uppercase">Sports UI</span>
+                    <h3 class="font-bold text-xl mt-3 dark:text-white">Hostel Cricket Club</h3>
+                    <p class="text-sm text-gray-500 my-4 leading-relaxed line-clamp-2">A tournament management platform inspired by ICC, designed to handle cricket schedules and rankings.</p>
+                    <button onclick="openProjectPreview('https://vishalkushwaha51.github.io/hcc/')" class="text-green-700 font-bold text-xs uppercase tracking-wider hover:text-green-500 flex items-center gap-2">
+                        Live Preview <i class="fas fa-expand-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="project-card bg-white dark:bg-gray-900 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-500">
+                <div class="h-48 bg-red-50 dark:bg-red-900/20 flex items-center justify-center relative group">
+                    <i class="fas fa-users text-6xl text-red-600 opacity-20 group-hover:scale-110 transition duration-500"></i>
+                </div>
+                <div class="p-6">
+                    <span class="text-[10px] bg-red-100 text-red-700 px-2 py-1 rounded font-bold uppercase">Organization</span>
+                    <h3 class="font-bold text-xl mt-3 dark:text-white">Rotaract District 3120</h3>
+                    <p class="text-sm text-gray-500 my-4 leading-relaxed line-clamp-2">Official community platform for District 3120 showcasing service activities and member goals.</p>
+                    <button onclick="openProjectPreview('https://vishalkushwaha51.github.io/rotaract3120/')" class="text-green-700 font-bold text-xs uppercase tracking-wider hover:text-green-500 flex items-center gap-2">
+                        Live Preview <i class="fas fa-expand-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="project-card bg-white dark:bg-gray-900 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-500">
+                <div class="h-48 bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center relative group">
+                    <i class="fas fa-ship text-6xl text-blue-600 opacity-20 group-hover:scale-110 transition duration-500"></i>
+                </div>
+                <div class="p-6">
+                    <span class="text-[10px] bg-blue-100 text-blue-700 px-2 py-1 rounded font-bold uppercase">Corporate</span>
+                    <h3 class="font-bold text-xl mt-3 dark:text-white">Zwota Export Services</h3>
+                    <p class="text-sm text-gray-500 my-4 leading-relaxed line-clamp-2">Professional landing page for international logistics focusing on conversion and clean UX.</p>
+                    <button onclick="openProjectPreview('https://vishalkushwaha51.github.io/zwotaservices/')" class="text-green-700 font-bold text-xs uppercase tracking-wider hover:text-green-500 flex items-center gap-2">
+                        Live Preview <i class="fas fa-expand-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="project-card bg-white dark:bg-gray-900 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-500">
+                <div class="h-48 bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center relative group">
+                    <i class="fas fa-address-card text-6xl text-purple-600 opacity-20 group-hover:scale-110 transition duration-500"></i>
+                </div>
+                <div class="p-6">
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-2 py-1 rounded font-bold uppercase">Personal Brand</span>
+                    <h3 class="font-bold text-xl mt-3 dark:text-white">Faqeha Portfolio</h3>
+                    <p class="text-sm text-gray-500 my-4 leading-relaxed line-clamp-2">A minimalist personal portfolio built to showcase professional identity and creative work.</p>
+                    <button onclick="openProjectPreview('https://vishalkushwaha51.github.io/faqehaportfolio/')" class="text-green-700 font-bold text-xs uppercase tracking-wider hover:text-green-500 flex items-center gap-2">
+                        Live Preview <i class="fas fa-expand-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div id="projectModal" class="project-modal">
+    <div class="project-modal-content">
+        <div class="project-modal-header">
+            <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                <span id="modalProjectUrl" class="ml-4 text-[10px] font-mono text-gray-400 truncate max-w-[200px] md:max-w-none"></span>
+            </div>
+            <button onclick="closeProjectPreview()" class="close-project">&times;</button>
+        </div>
+        <iframe id="projectFrame" src="" frameborder="0" class="w-full h-full bg-white"></iframe>
+    </div>
+</div>
+    
+    </section>
+    <section id="achievements" class="py-24 bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16">
+            
+            <div>
+                <h3 class="text-green-600 font-bold uppercase tracking-[0.2em] text-xs mb-4">Technical Credentials</h3>
+                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-10">Certifications</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex gap-6 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-green-500 transition-all">
+                        <i class="fas fa-file-code text-2xl text-green-700 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold dark:text-white">Summer Training Certificate</h4>
+                            <p class="text-sm text-gray-500 italic">Barrownz Learning Academy | 3rd & 5th Sem</p>
+                            <p class="text-xs text-gray-400 mt-2">Focused on Java-based Enterprise solutions and Python Web Development.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-green-500 transition-all">
+                        <i class="fas fa-certificate text-2xl text-green-700 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold dark:text-white">ADCA Certification</h4>
+                            <p class="text-sm text-gray-500 italic">2021</p>
+                            <p class="text-xs text-gray-400 mt-2">Advanced Diploma in Computer Applications covering core computing foundations.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-green-500 transition-all">
+                        <i class="fab fa-google text-2xl text-green-700 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold dark:text-white">DevFest 2024 Lucknow</h4>
+                            <p class="text-sm text-gray-500 italic">Attendee & Participant</p>
+                            <p class="text-xs text-gray-400 mt-2">Engaged with GDG experts on the latest trends in Google Cloud and Web Technologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+    <h3 class="text-green-600 font-bold uppercase tracking-[0.2em] text-xs mb-4">Leadership & Community</h3>
+    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-10">2025-26 Appointments</h2>
+
+    <div class="space-y-6">
+        <div class="relative p-8 bg-green-700 text-white rounded-3xl shadow-xl hover:shadow-green-900/40 transition-all group overflow-hidden">
+            <i class="fas fa-laptop-code absolute -right-4 -bottom-4 text-8xl opacity-10 group-hover:scale-110 transition-transform"></i>
+            <div class="flex justify-between items-start">
+                <span class="text-[10px] font-black uppercase tracking-widest px-2 py-1 bg-white/20 rounded">Tenure 2025-26</span>
+                <i class="fas fa-shield-alt text-xl opacity-50"></i>
+            </div>
+            <h4 class="text-xl font-bold mt-4">District Website Chair</h4>
+            <p class="text-green-100 text-sm mt-1">Rotaract District 3120</p>
+            <p class="text-green-50 text-xs mt-4 leading-relaxed">
+                Entrusted with the technical leadership and digital architecture for the entire district. Responsible for maintaining web security, user experience, and digital engagement.
+            </p>
+        </div>
+
+        <div class="relative p-8 bg-gray-900 text-white rounded-3xl shadow-xl hover:bg-black transition-all group overflow-hidden">
+            <i class="fas fa-file-invoice-dollar absolute -right-4 -bottom-4 text-8xl opacity-10 group-hover:scale-110 transition-transform"></i>
+            <div class="flex justify-between items-start">
+                <span class="text-[10px] font-black uppercase tracking-widest px-2 py-1 bg-green-600 rounded">Tenure 2025-26</span>
+                <i class="fas fa-vault text-xl opacity-50"></i>
+            </div>
+            <h4 class="text-xl font-bold mt-4">Club Treasurer</h4>
+            <p class="text-gray-400 text-sm mt-1">Rotaract Club of Lucknow Phoenix</p>
+            <p class="text-gray-500 text-xs mt-4 leading-relaxed">
+                Appointed to oversee club finances, managing budget allocations for community service projects and ensuring 100% financial transparency and reporting.
+            </p>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="bg-gray-900 text-white pt-24 pb-12">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
+            <div class="space-y-8">
+                <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                    Let's build something <span class="text-green-500">extraordinary</span> together.
+                </h2>
+                <p class="text-gray-400 text-lg">
+                    I'm currently seeking frontend opportunities for 2026. If you have a project in mind or just want to say hi, feel free to reach out.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="mailto:vishalkumarkushwaha822129@gmail.com" target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-bold transition flex items-center gap-3">
+                        <i class="fas fa-envelope"></i> vishalkumarkushwaha...
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 md:pl-20">
+                <div class="space-y-6">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500">Socials</h4>
+                    <ul class="space-y-4">
+                        <li><a href="https://linkedin.com/in/vishal-kushwaha51" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500 transition font-medium">LinkedIn</a></li>
+                        <li><a href="https://github.com/vishal-kushwaha51" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500 transition font-medium">GitHub</a></li>
+                        <li><a href="https://www.instagram.com/vishal_kushwaha2.0" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500 transition font-medium">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500">Contact</h4>
+                    <ul class="space-y-4">
+                        <li><a href="https://wa.me/919065849388" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500 transition font-medium">WhatsApp</a></li>
+                        <li><a href="tel:+919065849388" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-green-500 transition font-medium">Direct Call</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-black tracking-tighter">
+                VISHAL <span class="text-green-500">KUSHWAHA</span>
+            </div>
+            <p class="text-gray-500 text-sm">
+                © 2026. Designed and Coded with precision.
+            </p>
+        </div>
+    </div>
+</footer>
+
+    
+
+    <div id="modal" class="modal">
+        <img id="modalImage" src="" alt="Certificate">
+    </div>
+
+    <svg class="hidden">
+        <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" stroke="#27ae60" stroke-width="1" />
+            </pattern>
+        </defs>
+    </svg>
+    <a href="YOUR_RESUME_LINK.pdf" target="_blank" rel="noopener noreferrer" download="Vishal_Kushwaha_Resume" class="floating-cv shadow-2xl">
+    <span class="cv-text">Download CV</span>
+    <i class="fas fa-file-download"></i>
+</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
